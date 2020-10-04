@@ -29,9 +29,16 @@ class Posts extends CI_Controller
         if (empty($data['post'])) {
             show_404();
         }
+        $this->load->model('comment');
+        $data2['comments']=$this->comment->get_comment($postID);
+        
+
         $this->load->view('header2');
         $this->load->view('post',$data);
+        $this->load->view('comment',$data2);
+
     }
+
     function contact(){
         $this->load->view('header2');
         $this->load->view('contact');

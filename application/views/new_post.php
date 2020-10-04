@@ -33,6 +33,8 @@
         <textarea id="exampleFormControlTextarea1" rows="5" class="form-control" name="postt"></textarea></br>
         </br>
 
+
+
         <button name="submit" type="submit" class="btn btn-primary">Post</button>
     </form>
 

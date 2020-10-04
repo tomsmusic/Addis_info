@@ -19,6 +19,7 @@ class Post extends CI_Model
         $query=$this->db->get();
         return $query->first_row('array');
     }
+    
     function insert_post($data){
         $this->db->insert('posts',$data);
         return $this->db->insert_id();
