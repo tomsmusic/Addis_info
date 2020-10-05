@@ -24,7 +24,7 @@ class users extends CI_Controller
             }
         }
         
-        $this->load->view('header2');
+        $this->load->view('header');
         $this->load->view('login',$data);
         $this->load->view('footer');
     }
@@ -87,7 +87,7 @@ class users extends CI_Controller
               redirect(base_url().'posts');
         }}
         $this->load->helper('form');
-        $this->load->view('header2');
+        $this->load->view('header');
         $this->load->view('register_user',$data);
         $this->load->view('footer');
     }

@@ -1,5 +1,19 @@
 
-
+<header class="masthead"style="background-image: url(<?php echo base_url();?>images/home-bg.jpg);" >
+  
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Addis life</h1>
+          <span class="subheading">Leave your dream</span>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
     <!-- Page Content -->
     <div class="container">
@@ -24,24 +38,24 @@
                             <?= ucfirst($row['title'])?>
                         </a>
 <?php if ($this->session->userdata('id')){ ?><a class="btn btn-primary" href="<?=base_url()?>posts/editpost/<?=$row['postID']?>">Edit</a> <?php }?>
-<?php if ($this->session->userdata('id')){?><a class="btn btn-danger" href="posts/deletepost/<?=$row['postID']?>"> Delete</a> <?php }?>
+<?php if ($this->session->userdata('id')){?><a class="btn btn-danger" href="<?=base_url()?>posts/deletepost/<?=$row['postID']?>"> Delete</a> <?php }?>
                     </h2>
-
-                    <p>
+                    <a href="<?=base_url()?>posts/post/<?=$row['postID']?>">
+                    <p class="post-subtitle">
                         <?=substr(strip_tags($row['post']),0,300)."..." ?>
-                    </p>
-
+             </p>
+             </a>
                     <p><a href="<?=base_url()?>posts/post/<?=$row['postID']?>">read more</a></p>
-                    <p class="lead">
-                  <!--      by  <a href="#">Start Bootstrap</a>   -->
-                       
-                    </p>
-                    <p>Posted on
+                  
+                    <span>Posted on
                         <?=$row['date_added']?>
-                    </p>
-                    <img src="<?=base_url('images/m0.jpg')?>">
+             </span>
+                    <div class="card" style="width: 24rem; ">    
+                    ​<picture>
+                    <img class="card-img-top"  src="<?=base_url()?>uploads/<?=$row['image']?>">
+                    ​</picture>
                     <hr>
-
+             </div>
                     <?php            
              } 
         }   
@@ -85,17 +99,17 @@
                 </div>
 
                 <!-- Categories Widget -->
-                <div class="card my-4">
+            <!--    <div class="card my-4">
                     <h5 class="card-header">ACCESS</h5>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul class="list-unstyled mb-0">
                                     <li>
-                                        <a href="<?=base_url()?>users/register">+ADD User</a>
+                                        <a href="users/register">+ADD User</a>
                                     </li>
                                     <li>
-                                        <a href="<?=base_url()?>posts/new_post">+ADD Post</a>
+                                        <a href="posts/new_post">+ADD Post</a>
                                     </li>
                                     <li>
                                         <a href="#">#</a>
@@ -117,7 +131,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <!-- Side Widget -->
                 <!-- <div class="card my-4">

@@ -41,7 +41,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="<?=base_url();?>assets/js/clean-blog.min.js"></script>
-
+  
 </body>
 
 </html>

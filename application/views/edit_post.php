@@ -1,4 +1,22 @@
 
+<header class="masthead"style="background-image: url(<?php echo base_url();?>images/home-bg.jpg);" >
+  
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Addis info</h1>
+          <span class="subheading"><?= $post['title']?></span>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
 <div class="container">
 <div class="row">
 
@@ -29,7 +47,9 @@
         <label>post</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="postt"><?= $post['post']?></textarea></br>
         </br>
-        <img src="<?=base_url('images/m0.jpg')?>">
+        <div class="card" style="width: 30rem;"> 
+        <img class="card-img-top" src="<?=base_url()?>uploads/<?=$post['image']?>" alt="">
+        </div>
         <button name="submit" type="submit" class="btn btn-primary" >submit</button>
     </form>
 

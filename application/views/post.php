@@ -1,5 +1,19 @@
 
-
+<header class="masthead"style="background-image: url(<?php echo base_url();?>images/home-bg.jpg);" >
+  
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Addis info</h1>
+          <span class="subheading"><?= $post['title']?></span>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
   <!-- Page Content -->
   <div class="container">
 
@@ -20,13 +34,14 @@
         <hr>
 
         <!-- Date/Time -->
-        <p><?= $post['date_added']?></p>
+        <span><?= $post['date_added']?></span>
 
         
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="<?=base_url('images/m0.jpg')?>" alt="">
-
+   <div class="card" style="width: 30rem;"> 
+        <img class="card-img-top" src="<?=base_url()?>uploads/<?=$post['image']?>" alt="">
+</div>
         <hr>
 
         <!-- Post Content -->

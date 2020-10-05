@@ -13,8 +13,8 @@
   <!-- Bootstrap core CSS -->
  
   <link href="<?php echo base_url()?>css/bootstrap.min.css" rel="stylesheet" >
-
- 
+  <link href="<?php echo base_url()?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url()?>css/clean-blog.min.css" rel="stylesheet">
   
 </head>
 
@@ -33,7 +33,7 @@
             <a  class="nav-link" style="color:black;"  href="<?php echo base_url();?>posts/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html" style="color:black;">About</a>
+            <a class="nav-link" href="<?php echo base_url();?>posts/about" style="color:black;">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" style="color:black;" href="<?php echo base_url();?>posts/contact">Contact</a>
