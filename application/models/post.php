@@ -19,6 +19,18 @@ class Post extends CI_Model
         $query=$this->db->get();
         return $query->first_row('array');
     }
+    function get_search_result($search_term ='default'){
+
+        $this->db->select('*');
+        $this->db->from('posts');
+        $this->db->like('title',$search_term);
+
+         
+         $query = $this->db->get();
+
+         
+         return $query->result_array();
+    }
     
     function insert_post($data){
         $this->db->insert('posts',$data);

@@ -25,6 +25,15 @@ class Posts extends CI_Controller
         $this->load->view('post_index',$data);
         $this->load->view('footer');
     }
+    function execute_search(){
+        $search_term = $this->input->post('search');
+        
+        $data['results'] = $this->post->get_search_result($search_term);
+
+        $this->load->view('header');
+        $this->load->view('search_result',$data);
+        $this->load->view('footer');
+    }
     function post($postID){
         $data['post']=$this->post->get_post($postID);
         if (empty($data['post'])) {
@@ -41,11 +50,7 @@ class Posts extends CI_Controller
 
     }
 
-    function contact(){
-        $this->load->view('header');
-        $this->load->view('contact');
-        $this->load->view('footer');
-    }
+   
     function about(){
         $this->load->view('header');
         $this->load->view('About');

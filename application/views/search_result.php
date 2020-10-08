@@ -25,34 +25,35 @@
 
 
                 <?php
-             if (!isset($posts)) {?>
+                //var_dump($results);
+             if (!isset($results)) {?>
                     <P>there is no blog</p>
                     <?php              
              }else{
 
-             foreach($posts as $row) { 
+             foreach($results as $val) { 
     ?>
                     <!-- Title -->
                     <h2  class="post-title">
-                        <a style="color:black;" href="<?=base_url()?>posts/post/<?=$row['postID']?>">
-                            <?= ucfirst($row['title'])?>
+                        <a style="color:black;" href="<?=base_url()?>posts/post/<?=$val['postID']?>">
+                            <?php echo ucfirst($val['title'])?>
                         </a>
-<?php if ($this->session->userdata('id')){ ?><a class="btn-primary btn-sm" href="<?=base_url()?>posts/editpost/<?=$row['postID']?>">Edit</a> <?php }?>
-<?php if ($this->session->userdata('id')){?><a class="btn-danger btn-sm" href="<?=base_url()?>posts/deletepost/<?=$row['postID']?>"> Delete</a> <?php }?>
+<?php if ($this->session->userdata('id')){ ?><a class="btn btn-primary" href="<?=base_url()?>posts/editpost/<?=$val['postID']?>">Edit</a> <?php }?>
+<?php if ($this->session->userdata('id')){?><a class="btn btn-danger" href="<?=base_url()?>posts/deletepost/<?=$val['postID']?>"> Delete</a> <?php }?>
                     </h2>
-                    <a href="<?=base_url()?>posts/post/<?=$row['postID']?>">
+                    <a href="<?=base_url()?>posts/post/<?=$val['postID']?>">
                     <p class="post-subtitle">
-                        <?=substr(strip_tags($row['post']),0,300)."..." ?>
+                        <?=substr(strip_tags($val['post']),0,300)."..." ?>
              </p>
              </a>
-                    <p><a href="<?=base_url()?>posts/post/<?=$row['postID']?>">read more</a></p>
+                    <p><a href="<?=base_url()?>posts/post/<?=$val['postID']?>">read more</a></p>
                   
                     <span>Posted on
-                        <?=$row['date_added']?>
+                        <?=$val['date_added']?>
              </span>
                     <div class="card" style="width: 24rem; ">    
                     ​<picture>
-                    <img class="card-img-top"  src="<?=base_url()?>uploads/<?=$row['image']?>">
+                    <img class="card-img-top"  src="<?=base_url()?>uploads/<?=$val['image']?>">
                     ​</picture>
                     <hr>
              </div>
@@ -62,7 +63,7 @@
      ?>
 
                     <!-- Pager -->
-                    <?=$pages?>
+                    
                         <hr>
 
 

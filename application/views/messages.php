@@ -7,7 +7,7 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
           <h1>Addis life</h1>
-          <span class="subheading">Leave your dream</span>
+          <span class="subheading">Messages</span>
           
         </div>
       </div>
@@ -25,44 +25,39 @@
 
 
                 <?php
-             if (!isset($posts)) {?>
-                    <P>there is no blog</p>
+             if (!isset($message)) {?>
+                    <P>there is no message</p>
                     <?php              
              }else{
 
-             foreach($posts as $row) { 
+             foreach($message as $row) { 
     ?>
                     <!-- Title -->
                     <h2  class="post-title">
-                        <a style="color:black;" href="<?=base_url()?>posts/post/<?=$row['postID']?>">
-                            <?= ucfirst($row['title'])?>
+                        <a style="color:black;" href="<?=base_url()?>posts/post/<?=$row['id']?>">
+                            <?= ucfirst($row['name'])?>
                         </a>
-<?php if ($this->session->userdata('id')){ ?><a class="btn-primary btn-sm" href="<?=base_url()?>posts/editpost/<?=$row['postID']?>">Edit</a> <?php }?>
-<?php if ($this->session->userdata('id')){?><a class="btn-danger btn-sm" href="<?=base_url()?>posts/deletepost/<?=$row['postID']?>"> Delete</a> <?php }?>
+
+<?php if ($this->session->userdata('id')){?><a class="btn-danger btn-sm" href="<?=base_url()?>posts/deletepost/<?=$row['id']?>"> Delete</a> <?php }?>
                     </h2>
-                    <a href="<?=base_url()?>posts/post/<?=$row['postID']?>">
+                    <a href="<?=base_url()?>posts/post/<?=$row['id']?>">
                     <p class="post-subtitle">
-                        <?=substr(strip_tags($row['post']),0,300)."..." ?>
+                        <?=substr(strip_tags($row['message']),0,300)."" ?>
              </p>
              </a>
-                    <p><a href="<?=base_url()?>posts/post/<?=$row['postID']?>">read more</a></p>
+                    
                   
-                    <span>Posted on
+                    <span>
                         <?=$row['date_added']?>
              </span>
-                    <div class="card" style="width: 24rem; ">    
-                    ​<picture>
-                    <img class="card-img-top"  src="<?=base_url()?>uploads/<?=$row['image']?>">
-                    ​</picture>
-                    <hr>
-             </div>
+             <hr/>
                     <?php            
              } 
         }   
      ?>
 
                     <!-- Pager -->
-                    <?=$pages?>
+                    <?php//$pages?>
                         <hr>
 
 

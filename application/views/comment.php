@@ -54,16 +54,19 @@
 
         <!-- Search Widget -->
         <div class="card my-4">
-          <h5 class="card-header">Search</h5>
-          <div class="card-body">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-append">
-                <button class="btn btn-secondary" type="button">Go!</button>
+                    <h5 class="card-header">Search</h5>
+                    <div class="card-body">
+            <?php   echo form_open('posts/execute_search');  ?>
+                        <div class="input-group">
+            <?php   echo form_input(array('name'=>'search'));  ?>
+                            <span class="input-group-append">
+                <div class="btn btn-secondary">
+            <?php   echo form_submit('search_submit','Submit'); ?>
+                </div>
               </span>
-            </div>
-          </div>
-        </div>
+                        </div>
+                    </div>
+                </div>
 
         <!-- Categories Widget 
         <div class="card my-4">

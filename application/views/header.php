@@ -44,7 +44,7 @@
             <a class="nav-link" href="<?php echo base_url();?>posts/about" >About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="<?php echo base_url();?>posts/contact">Contact</a>
+            <a class="nav-link"  href="<?php echo base_url();?>messages/contact">Contact</a>
           </li>
           
           <li class="nav-item">
@@ -55,6 +55,10 @@
           <li class="nav-item">
             
             <?php if ($this->session->userdata('id')){ ?><a class="nav-link"  href="<?php echo base_url();?>posts/new_post"> +Add post </a> <?php }?>
+          </li>
+          <li class="nav-item">
+            
+            <?php if ($this->session->userdata('id')){ ?><a class="nav-link"  href="<?php echo base_url();?>messages/message"> Messages </a> <?php }?>
           </li>
           <li class="nav-item">
             
